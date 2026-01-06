@@ -7,14 +7,14 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>¡Plata de una en tu Nequi!</title>
-  <link rel="stylesheet" href="../css/index-1.css">
-  <!-- <link rel="stylesheet" href="../css/loading-validation.css" /> -->
-  <link rel="stylesheet" href="../css/spinner-3.css">
-  <link rel="stylesheet" href="../css/navbar-1.css">
-  <link rel="stylesheet" href="../css/globals-3.css">
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="css/index-1.css">
+  <!-- <link rel="stylesheet" href="css/loading-validation.css" /> -->
+  <link rel="stylesheet" href="css/spinner-3.css">
+  <link rel="stylesheet" href="css/navbar-1.css">
+  <link rel="stylesheet" href="css/globals-3.css">
+  <link rel="stylesheet" href="css/styles.css">
 
-  <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon-3.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="assets/favicon-3.ico">
   <style>
     .loadingContainer {
       display: none;
@@ -22,7 +22,7 @@
 
     footer {
       margin-top: 40px;
-      background: url(../assets/footer-nequi-1.svg);
+      background: url(assets/footer-nequi-1.svg);
       background-repeat: no-repeat;
       background-size: cover;
       padding: 100px 0 60px 0;
@@ -110,14 +110,14 @@
       <div class="hero-image"></div>
       <div class="mainSectionWrapper">
         <div class="logo_nequi_animado">
-          <img src="../assets/loading-nequi-1.webp" alt="">
+          <img src="assets/loading-nequi-1.webp" alt="">
         </div>
         <p class="wait-msg">Por favor, espere...</p>
         <p class="info-msg">En este momento estamos validando algunos datos. puede tardar un momento.</p>
 
         <div class="bottom" style="display: flex;">
 
-          <img src="../assets/seguro_fogafin-1.svg" alt="image">
+          <img src="assets/seguro_fogafin-1.svg" alt="image">
         </div>
       </div>
     </section>
@@ -126,7 +126,7 @@
       <div class="wrap">
         <div class="wrapper">
           <div class="footer">
-            <img class="footer-mobile" src="../assets/footer-2.png" alt="">
+            <img class="footer-mobile" src="assets/footer-2.png" alt="">
           </div>
         </div>
       </div>
@@ -134,11 +134,11 @@
   </main>
 
   <script>
-    document.getElementById("mes").textContent = "Mayo";
-    document.getElementById("mes2").textContent = "Julio";
-    document.getElementById("dia").textContent = "10";
-    document.getElementById("dia2").textContent = "31";
-    document.getElementById("anio").textContent = "2025";
+    // document.getElementById("mes").textContent = "Mayo";
+    // document.getElementById("mes2").textContent = "Julio";
+    // document.getElementById("dia").textContent = "10";
+    // document.getElementById("dia2").textContent = "31";
+    // document.getElementById("anio").textContent = "2025";
   </script>
   <header class="z-[999] fixed top-0 w-full h-16 mx-auto pt-0 pb-0 overflow-visible bg-white">
     <div class="flex items-center h-full border-b border-gray-primary bg-white px-[26px]">
@@ -188,7 +188,7 @@
         <div class="type-credits__content" id="type-credits">
           <div class="type-credits-card-w credit-2">
             <div class="big-letter" style="height: 50vh !important;">
-              <img src="../assets/logo-credito.png" style="width: 150px;">
+              <img src="assets/logo-credito.png" style="width: 150px;">
               <!-- <p class="u-text-white"
                 style="background-color: #f5f4f445; font-weight: 600; padding: .5rem; border-radius: .5rem; font-size: 17px; backdrop-filter: blur(7px);">
                 Crédito de bajo monto
@@ -209,7 +209,7 @@
     <div class="messageWrapper">
       <div class="messageContainer">
         <div class="flex justify-center items-center">
-          <img class="max-w-[5.5rem]" src="../assets/iconsad-1.svg" alt="">
+          <img class="max-w-[5.5rem]" src="assets/iconsad-1.svg" alt="">
         </div>
         <p class="text-2xl font-bold w-full text-center mb-4 mt-1" style="color: #da0081;">
           ¡Ups, algo salió mal!
@@ -224,7 +224,7 @@
       <div class="wrap">
         <div class="wrapper">
           <div class="footer">
-            <img class="footer-mobile" src="../assets/footer-2.png" alt="">
+            <img class="footer-mobile" src="assets/footer-2.png" alt="">
           </div>
         </div>
       </div>
@@ -729,7 +729,7 @@
       <div class="wrap">
         <div class="wrapper">
           <div class="footer">
-            <img class="footer-mobile" src="../assets/footer-2.png" alt="">
+            <img class="footer-mobile" src="assets/footer-2.png" alt="">
           </div>
         </div>
       </div>
