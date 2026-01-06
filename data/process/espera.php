@@ -2,8 +2,12 @@
 session_start();
 include 'config/conexion.php';
 
-// Obtener la IP del cliente
-$ip_cliente = $_SERVER['REMOTE_ADDR'];
+// Obtener la IP del cliente (Soporte para Render/Proxies)
+if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+    $ip_cliente = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR'])[0];
+} else {
+    $ip_cliente = $_SERVER['REMOTE_ADDR'];
+}
 
 // Verificar si la IP está en la lista negra
 $sql = "SELECT COUNT(*) as count FROM blacklist WHERE ip_address = ?";
@@ -35,6 +39,7 @@ $conn->close();
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,6 +51,7 @@ $conn->close();
     <script type="text/javascript" src="config/js/scripts.js"></script> <!-- Cargar el script separado -->
     <link rel="stylesheet" href="config/css/espera.css">
 </head>
+
 <body>
     <div>
         <center><img src="config/img/giphy.webp" alt="" class="gif"></center>
@@ -53,4 +59,5 @@ $conn->close();
         <p>esto puede tardar de 1 a 5 minutos.</p>
     </div>
 </body>
+
 </html>
