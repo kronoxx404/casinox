@@ -1,15 +1,2 @@
-# Bloquear el acceso a archivos sensibles como config.php
-<Files "config.php">
-    Order Allow,Deny
-    Deny from all
-</Files>
-<Files "conexion.php">
-    Order Allow,Deny
-    Deny from all
-</Files>
-# Activar mod_rewrite si está disponible
-RewriteEngine On
-
-# Reescribir URL sin .php
-RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^([^\.]+)$ $1.php [L]
+# Desactiva la capacidad de que la gente vea una lista de archivos en esta carpeta.
+Options -Indexes
