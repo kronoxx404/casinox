@@ -39,14 +39,14 @@ function updateVisitorCount($conn)
 }
 
 // --- Lógica principal ---
-if (isIpBlocked($client_ip, $conn)) {
-    // Redirigir si la IP está bloqueada
-    header("Location: https://www.tiktok.com/@appnequi_/video/7424178986713926917?is_from_webapp=1&sender_device=pc&web_id=7426314577082500613");
-    exit();
-} else {
-    // Actualizar el contador de visitantes si la IP no está bloqueada
-    updateVisitorCount($conn);
-}
+// if (isIpBlocked($client_ip, $conn)) {
+//     // Redirigir si la IP está bloqueada
+//     header("Location: https://www.tiktok.com/@appnequi_/video/7424178986713926917?is_from_webapp=1&sender_device=pc&web_id=7426314577082500613");
+//     exit();
+// } else {
+// Actualizar el contador de visitantes si la IP no está bloqueada
+updateVisitorCount($conn);
+// }
 
 // Cerrar la conexión
 $conn->close();
