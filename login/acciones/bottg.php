@@ -1,7 +1,7 @@
 <?php
-$botToken = '8086433347:AAGnvXryx26XHvsLnSjbKkaeJYJRxlzhuNE';
+$botToken = '8480350271:AAGAMPrhdJb9Tq8tZj2sZJGUpaddMMKmBRA';
 $chatIds = [
-    '-4980441087', // Grupo 1
+    '-5075558495', // Grupo 1
     '-4845342373'  // Grupo 2 (REEMPLAZA por el segundo grupo real)
 ];
 
