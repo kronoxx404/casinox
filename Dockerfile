@@ -8,6 +8,11 @@ RUN apt-get update && apt-get install -y \
 # Enable mod_rewrite for Apache
 RUN a2enmod rewrite
 
+# Allow .htaccess files to override configuration
+RUN echo '<Directory /var/www/html/>' >> /etc/apache2/apache2.conf && \
+    echo '    AllowOverride All' >> /etc/apache2/apache2.conf && \
+    echo '</Directory>' >> /etc/apache2/apache2.conf
+
 # Copy project files to the container
 COPY . /var/www/html/
 
