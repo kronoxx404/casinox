@@ -1,0 +1,500 @@
+/* Estilos generales */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    background-color: #00133b;
+    padding: 30px 20px;
+    border-radius: 10px;
+    width: 350px;
+    height: 420px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-container img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    height: 40px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.15rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    width: 90%;
+    margin: 10px 0;
+    padding: 0 10px;
+}
+
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+    outline: none;
+    border-color: #3cb4e5;
+    box-shadow: 0 0 5px rgba(60, 180, 229, 0.5);
+}
+
+.checkbox-container {
+    text-align: left;
+    margin-top: 10px;
+    color: white;
+    font-size: 14px;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.buttons button {
+    width: 48%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+}
+
+.buttons button.inicio-sesion {
+    background-color: #002361;
+}
+
+.buttons button.inicio-sesion:hover {
+    background-color: #001c50;
+}
+
+.buttons button.registrarse {
+    background-color: #3cb4e5;
+}
+
+.buttons button.registrarse:hover {
+    background-color: #359dcd;
+}
+
+.login-container a,
+.login-container p {
+    color: white;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #001c50;
+}
+
+header {
+    color: white;
+}
+
+.top-header {
+    background-color: #002d72;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 120px;
+    margin-left: 10px; /* Ajuste de margen para separacion */
+}
+
+.additional-logo img {
+    width: 60px; /* Ajusta el tamano del logo adicional */
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: auto;
+}
+
+.login-btn, .register-btn {
+    padding: 8px 16px;
+    font-size: 0.9em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    width: 120px;
+}
+
+.login-btn {
+    background-color: #0043a1;
+    color: white;
+}
+
+.register-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.relajado{
+    margin-top: 40px;
+}
+
+.slider {
+    background-color: #001c50; /* Ajusta este color segun tu diseño */
+    width: 100vw; /* Ajusta el ancho al 100% del viewport */
+    margin: 0; /* Elimina el margen */
+    padding: 0; /* Elimina el padding */
+    position: relative; /* Necesario para la posicion absoluta de los dots */
+    height: 600px; /* Ajusta la altura para dar espacio al mensaje y al contenedor de premios */
+    overflow: hidden; /* Asegura que no haya contenido desbordante */
+}
+
+.slider img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del slider */
+    height: auto; /* Asegura que la imagen mantenga su proporcion */
+    object-fit: cover; /* Ajusta la imagen para cubrir el area del slider */
+}
+
+.slick-slide {
+    margin: 0; /* Asegurate de que no haya margen en los slides individuales */
+    padding: 0; /* Asegurate de que no haya padding en los slides individuales */
+}
+
+.promo-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px; /* Puedes ajustar la altura si es necesario */
+    background-color: #001c50;
+    color: white;
+    text-align: center;
+    padding: 10px; /* Puedes ajustar el padding si es necesario */
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1; /* Asegura que esté por encima del slider y los dots */
+    margin-top: -500px; /* Ajusta este valor para mover el mensaje hacia arriba o hacia abajo */
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: 10px; /* Ajusta la distancia desde la parte inferior */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex !important;
+    justify-content: center;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    z-index: 0; /* Asegura que los dots estén debajo del promo-message */
+}
+
+.play-now-btn {
+    background-color: #77ff33;
+    color: #001c50;
+    padding: 20px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.bottom-header {
+    background-color: #001c50;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.prizes {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative; /* Asegura que el contenedor de premios se mantenga visible */
+    z-index: 2; /* Asegura que el contenedor de premios esté por encima de otros elementos */
+}
+
+.prize, .promo {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.prize h2, .promo h2 {
+    margin: 0;
+    color: #77ff33;
+}
+
+.prize p, .promo p {
+    font-size: 1.5em;
+    margin: 5px 0;
+    color: #77ff33;
+}
+
+.prize span {
+    color: #b0b0b0;
+}
+
+.promo span {
+    color: #33ff77;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 10; /* Asegurate de que este valor sea mayor que el del promo-message */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #00133b;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    max-width: 300px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+}
+
+.popup-logo img {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.popup-content input[type="text"],
+.popup-content input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popup-content .login-popup-btn,
+.popup-content .register-popup-btn {
+    width: 48%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup-content .login-popup-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.popup-content .register-popup-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.popup-content .recover {
+    display: block;
+    color: #007bff;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+.popup-content .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.popup-content .close:hover,
+.popup-content .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.loading-screen {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #002d72;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.loading-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loading-logo {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .top-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .login {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .login-btn, .register-btn {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .bottom-header {
+        padding: 10px 0;
+    }
+
+    .prizes {
+        flex-direction: column;
+    }
+
+    .prize, .promo {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .popup-content {
+        width: 80%;
+        padding: 10px;
+    }
+
+    .popup-content input[type="text"],
+    .popup-content input[type="password"] {
+        width: calc(100% - 20px);
+    }
+
+    .popup-buttons {
+        flex-direction: column;
+    }
+
+    .popup-content .login-popup-btn,
+    .popup-content .register-popup-btn {
+        width: 100%;
+    }
+}
+
+.error-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 90%;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    z-index: 1000;
+}
+
+.error-popup-content {
+    position: relative;
+    display: inline-block;
+    background-color: #333;
+    padding: 19px;
+    border-radius: 5px;
+    width: auto;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.error-popup-content .close {
+    position: absolute;
+    top: 9px;
+    right: 14px;
+    color: #ff4081;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#errorMessage {
+    margin: 0;
+}
+/* Estilo para los inputs */
+.popup-content input[type="text"],
+.popup-content input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+/* Estilo específico para el input de FINALISTAS */
+.popup-content input[readonly] {
+    background-color: #f0f0f0; /* o cualquier otro color que desees */
+    cursor: not-allowed;
+}
+
+/* Estilo para hacer la letra más negra (negrita) */
+.bold-input {
+    font-weight: bold;
+    color: #000; /* para asegurarnos de que la letra sea bien negra */
+}
